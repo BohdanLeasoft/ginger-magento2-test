@@ -219,6 +219,19 @@
                 <allowspecific>0</allowspecific>
                 <instructions/>
             </ginger_methods_swish>
+            <ginger_methods_viacash>
+                <active>1</active>
+                <model>GingerPay\Payment\Model\Methods\Viacash</model>
+                <title>Swish</title>
+                <description>Your order %id% at %name%</description>
+                <order_status_pending>pending_payment</order_status_pending>
+                <generate_invoice>1</generate_invoice>
+                <order_status_processing>processing</order_status_processing>
+                <invoice_notify>1</invoice_notify>
+                <payment_action>order</payment_action>
+                <allowspecific>0</allowspecific>
+                <instructions/>
+            </ginger_methods_viacash>
         </payment>
     </default>
 </config>

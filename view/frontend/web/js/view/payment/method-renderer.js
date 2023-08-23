@@ -34,7 +34,8 @@ define(
             {type: 'ginger_methods_googlepay', component: defaultComponent},
             {type: 'ginger_methods_giropay', component: defaultComponent},
             {type: 'ginger_methods_mobilepay', component: defaultComponent},
-            {type: 'ginger_methods_swish', component: defaultComponent}
+            {type: 'ginger_methods_swish', component: defaultComponent},
+            {type: 'ginger_methods_viacash', component: defaultComponent}
         ];
         $.each(methods, function (k, method) {
             var paymentMethod = window.checkoutConfig.payment[method['type']];

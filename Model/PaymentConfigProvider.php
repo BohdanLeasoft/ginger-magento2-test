@@ -39,6 +39,7 @@ class PaymentConfigProvider extends ModelBuilderRedefiner
         Methods\GiroPay::METHOD_CODE,
         Methods\MobilePay::METHOD_CODE,
         Methods\Swish::METHOD_CODE,
+        Methods\Viacash::METHOD_CODE,
     ];
 
     /**
