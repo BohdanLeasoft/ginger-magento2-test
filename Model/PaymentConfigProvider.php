@@ -36,6 +36,8 @@ class PaymentConfigProvider extends ModelBuilderRedefiner
         Methods\Afterpay::METHOD_CODE,
         Methods\Amex::METHOD_CODE,
         Methods\Googlepay::METHOD_CODE,
+        Methods\KlarnaDirectDebit::METHOD_CODE,
+        Methods\Sofort::METHOD_CODE,
         Methods\GiroPay::METHOD_CODE,
         Methods\MobilePay::METHOD_CODE,
         Methods\Swish::METHOD_CODE,
