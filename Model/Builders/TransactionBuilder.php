@@ -225,10 +225,12 @@ class TransactionBuilder
      */
     public function processRequest(OrderInterface $order, $transaction = null, $testModus = null): array
     {
+
         $method = $order->getPayment()->getMethod();
         $this->updateMailingAddress($order, $method, $transaction);
         $this->configRepository->addTolog('transaction', $transaction);
         $transactionId = !empty($transaction['id']) ? $transaction['id'] : null;
+
 
         if ($transactionId && !$this->configRepository->getError($transaction)) {
             $method = $this->getMethodFromOrder($order);
@@ -253,7 +255,6 @@ class TransactionBuilder
         if ($method == Banktransfer::METHOD_CODE) {
             return ['redirect' => $this->urlProvider->getSuccessProcessUrl((string)$transactionId)];
         }
-
         if ($transaction !== null && !empty(current($transaction['transactions'])['payment_url'])) {
             return ['redirect' => current($transaction['transactions'])['payment_url']];
         }

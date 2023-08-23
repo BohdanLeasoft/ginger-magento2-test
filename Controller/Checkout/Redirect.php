@@ -35,6 +35,7 @@ class Redirect extends ActionRedefiner
         PaymentHelper $paymentHelper,
         ConfigRepository $configRepository
     ) {
+
         $this->checkoutSession = $checkoutSession;
         $this->paymentHelper = $paymentHelper;
         $this->configRepository = $configRepository;

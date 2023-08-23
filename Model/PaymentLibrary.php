@@ -439,13 +439,14 @@ class PaymentLibrary extends AbstractMethod
      */
     public function prepareTransaction(OrderInterface $order, $platformCode, $methodCode): array
     {
+
         $testModus = false;
         $testApiKey = null;
         $custumerData = $this->customerData->get($order, $methodCode);
         $issuer = null;
         $verifiedTermsOfService = null;
-
         $additionalData = $order->getPayment()->getAdditionalInformation();
+
 
         switch ($platformCode) {
             case 'afterpay':
@@ -475,6 +476,8 @@ class PaymentLibrary extends AbstractMethod
         $orderData = $this->orderDataCollector->collectDataForOrder($order, $methodCode, $this->urlProvider, $this->orderLines, $paymentDetails, $custumerData);
 
         $client = $this->loadGingerClient((int)$order->getStoreId(), $testApiKey);
+
+
         $transaction = $client->createOrder($orderData);
 
         return $this->processRequest($order, $transaction, $testModus);

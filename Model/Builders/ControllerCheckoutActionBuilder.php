@@ -116,6 +116,7 @@ class ControllerCheckoutActionBuilder extends Action
             return $this->_redirect('checkout/cart');
         }
 
+
         if ($methodInstance instanceof \GingerPay\Payment\Model\PaymentLibrary) {
             try {
                 $result = $methodInstance->startTransaction($order);
